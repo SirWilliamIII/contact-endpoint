@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cors());
 
-const todos = [
+const messages = [
   {
     id: 1,
     name: "first",
@@ -19,24 +19,26 @@ const todos = [
 ];
 
 app.post("/api/cloudsnap", (req, res) => {
-  const todo = {
-    id: todos.length + 1,
-    title: req.body.title,
-    description: req.body.description
+  const m = {
+    id: messages.length + 1,
+    name: req.body.title,
+    email: req.body.description,
+    message: req.body.message,
+    date: new Date()
   };
 
-  todos.push(todo);
+  messages.push(m);
   return res.status(201).send({
     success: "true",
-    message: "todo added successfully",
-    todo
+    message: "message added successfully",
+    m
   });
 });
 
 app.get("/api/cloudsnap", (req, res) => {
   res.status(200).send({
     success: "true",
-    message: "todos retrieved",
+    message: "message retrieved",
     todos
   });
 });
