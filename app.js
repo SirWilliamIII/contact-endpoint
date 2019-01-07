@@ -20,11 +20,9 @@ const messages = [
 
 app.post("/api/cloudsnap", (req, res) => {
   const m = {
-    id: messages.length + 1,
-    name: req.body.title,
-    email: req.body.description,
-    message: req.body.message,
-    date: req.body.date
+    name: req.body.name,
+    email: req.body.email,
+    message: req.body.message
   };
 
   messages.push(m);
