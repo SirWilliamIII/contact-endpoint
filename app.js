@@ -10,11 +10,10 @@ app.use(cors());
 
 const messages = [
   {
-    id: 1,
-    name: "first name",
-    email: "email 1",
-    message: "message is here",
-    date: "a date"
+    name: "",
+    email: "",
+    message: "",
+    date: new Date()
   }
 ];
 
@@ -22,7 +21,8 @@ app.post("/api/cloudsnap", (req, res) => {
   const m = {
     name: req.body.name,
     email: req.body.email,
-    message: req.body.message
+    message: req.body.message,
+    date: messages.date
   };
 
   messages.push(m);
