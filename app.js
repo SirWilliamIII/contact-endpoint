@@ -11,10 +11,10 @@ app.use(cors());
 const messages = [
   {
     id: 1,
-    name: "first",
-    email: "description uno",
-    message: "message",
-    date: "date"
+    name: "first name",
+    email: "email 1",
+    message: "message is here",
+    date: "a date"
   }
 ];
 
@@ -39,7 +39,7 @@ app.get("/api/cloudsnap", (req, res) => {
   res.status(200).send({
     success: "true",
     message: "message retrieved",
-    todos
+    messages
   });
 });
 
