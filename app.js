@@ -24,7 +24,7 @@ app.post("/api/cloudsnap", (req, res) => {
     name: req.body.title,
     email: req.body.description,
     message: req.body.message,
-    date: new Date()
+    date: req.body.date
   };
 
   messages.push(m);
