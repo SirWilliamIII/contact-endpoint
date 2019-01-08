@@ -29,7 +29,6 @@ app.post("/api/cloudsnap", (req, res) => {
 app.get("/api/cloudsnap", (req, res) => {
   res.status(200).send({
     success: "true",
-    message: "message retrieved",
     messages
   });
 });
