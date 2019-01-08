@@ -4,25 +4,18 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
-const messages = [
-  {
-    name: "",
-    email: "",
-    message: "",
-    date: new Date()
-  }
-];
+const messages = [];
 
 app.post("/api/cloudsnap", (req, res) => {
   const m = {
     name: req.body.name,
     email: req.body.email,
     message: req.body.message,
-    date: messages.date
+    date: new Date()
   };
 
   messages.push(m);
